@@ -127,7 +127,7 @@ public class Silly implements Comparable<Silly>{
         y.countStatic();
         x.countStatic();
         x.countStatic();
-        int[] expected_values = {};
+        int[] expected_values = {0, 1, 2, 3};
 
         System.out.println("The countStatic calls will return " + Arrays.toString(expected_values));
     }
@@ -208,6 +208,13 @@ public class Silly implements Comparable<Silly>{
          *                You can get the length of a string by using the
          *                .length() method.
          */
+        if (this.name.length() < other.name.length()) {
+            return -1;
+        }
+        if (this.name.length() == other.name.length()) {
+            return 0;
+        }
+        return 1;
     }
 
     /*
